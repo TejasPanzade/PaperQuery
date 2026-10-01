@@ -1,13 +1,9 @@
 # PaperQuery
-
-[![Tests](https://github.com/VishwasPrabhakara/Chat_with_PDF/actions/workflows/tests.yml/badge.svg)](https://github.com/VishwasPrabhakara/Chat_with_PDF/actions/workflows/tests.yml)
-[![Live Demo](https://img.shields.io/badge/Live_Demo-Streamlit-FF4B4B?logo=streamlit&logoColor=white)](https://vishwas-paperlens-chat-with-pdf.streamlit.app)
 [![Python 3.11](https://img.shields.io/badge/Python-3.11-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 
 Question answering over PDFs using hybrid retrieval, cross-encoder reranking,
 and page-level citation markers.
 
-[Live demo](https://vishwas-paperlens-chat-with-pdf.streamlit.app) |
 [Security notes](SECURITY.md)
 
 ## What It Demonstrates
