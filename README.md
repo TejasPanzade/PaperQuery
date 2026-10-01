@@ -1,4 +1,4 @@
-# PaperLens
+# PaperQuery
 
 [![Tests](https://github.com/VishwasPrabhakara/Chat_with_PDF/actions/workflows/tests.yml/badge.svg)](https://github.com/VishwasPrabhakara/Chat_with_PDF/actions/workflows/tests.yml)
 [![Live Demo](https://img.shields.io/badge/Live_Demo-Streamlit-FF4B4B?logo=streamlit&logoColor=white)](https://vishwas-paperlens-chat-with-pdf.streamlit.app)
@@ -23,12 +23,12 @@ and page-level citation markers.
 - Document summaries, follow-up suggestions, token accounting, and chat export
 - Offline unit tests and GitHub Actions CI
 
-PaperLens is a portfolio RAG application, not a production document-management
+PaperQuery is a portfolio RAG application, not a production document-management
 or factual-verification system.
 
 ## Architecture
 
-![PaperLens architecture](architecture.svg)
+![PaperQuery architecture](architecture.svg)
 
 ## Retrieval Pipeline
 
@@ -46,7 +46,7 @@ PDFs
 ## Citation Boundary
 
 Each context chunk receives a marker such as `[1]`. The answer prompt requires
-Gemini to cite those markers inline. PaperLens now displays only valid markers
+Gemini to cite those markers inline. PaperQuery now displays only valid markers
 that actually appear in the generated answer, preserving their original page
 and source mapping.
 
@@ -78,7 +78,6 @@ Requirements:
 - Gemini API key from [Google AI Studio](https://aistudio.google.com/apikey)
 
 ```powershell
-git clone https://github.com/VishwasPrabhakara/Chat_with_PDF.git
 cd Chat_with_PDF
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
