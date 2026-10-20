@@ -1,5 +1,5 @@
 """
-PaperLens — Streamlit UI.
+PaperQuery — Streamlit UI.
 
 Hybrid-retrieval RAG over your PDFs, with cross-encoder reranking,
 grounded citations, auto-summaries, and suggested follow-ups.
@@ -13,14 +13,14 @@ from datetime import datetime
 import streamlit as st
 from dotenv import load_dotenv
 
-from pipeline import Answer, MAX_FILES, PaperLens
+from pipeline import Answer, MAX_FILES, PaperQuery
 
 MAX_FILE_BYTES = 20 * 1024 * 1024
 
 load_dotenv()
 
 st.set_page_config(
-    page_title="PaperLens — Chat with your PDFs",
+    page_title="PaperQuery — Chat with your PDFs",
     page_icon="📄",
     layout="wide",
 )
@@ -58,7 +58,7 @@ def _history_text(limit: int = 6) -> str:
 
 def _markdown_export() -> str:
     lines = [
-        "# PaperLens conversation",
+        "# PaperQuery conversation",
         f"_Exported {datetime.now().strftime('%Y-%m-%d %H:%M')}_",
         "",
         f"**Documents:** {', '.join(st.session_state.ingested_files) or '(none)'}",
@@ -111,7 +111,7 @@ def _render_answer(answer: Answer, key_prefix: str) -> None:
 # ---------------------------------------------------------------------------
 
 with st.sidebar:
-    st.markdown("### 📄 PaperLens")
+    st.markdown("### 📄 PaperQuery")
     st.caption("Hybrid retrieval + cross-encoder reranking + grounded citations.")
     st.divider()
 
@@ -165,7 +165,7 @@ with st.sidebar:
     ):
         with st.spinner("Reading, chunking, embedding, summarizing…"):
             try:
-                engine = PaperLens(api_key=api_key)
+                engine = PaperQuery(api_key=api_key)
                 engine.ingest(
                     (f.name, io.BytesIO(f.getvalue())) for f in pdf_files
                 )
@@ -194,7 +194,7 @@ with st.sidebar:
         st.download_button(
             "⬇️ Export chat (Markdown)",
             data=_markdown_export(),
-            file_name="paperlens_conversation.md",
+            file_name="paperquery_conversation.md",
             mime="text/markdown",
             use_container_width=True,
             disabled=not st.session_state.messages,
@@ -207,7 +207,7 @@ with st.sidebar:
 # Main panel
 # ---------------------------------------------------------------------------
 
-st.markdown("## 📄 PaperLens")
+st.markdown("## 📄 PaperQuery")
 st.caption(
     "Ask grounded, cited questions about your PDFs. "
     "Hybrid retrieval (semantic + BM25) → cross-encoder reranking → Gemini."
