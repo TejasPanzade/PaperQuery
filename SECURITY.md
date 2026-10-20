@@ -2,7 +2,7 @@
 
 ## PDF data flow
 
-PaperLens extracts text from uploaded PDFs. Extracted text is sent to Google
+PaperQuery extracts text from uploaded PDFs. Extracted text is sent to Google
 Gemini for document summaries, embeddings, question answering, and follow-up
 generation. Retrieved chunks are also processed by a local Hugging Face
 cross-encoder for reranking.
@@ -20,7 +20,7 @@ that processing.
 - The app limits one ingestion batch to five PDFs, 200 extracted pages, one
   million extracted characters, and 20 MB per uploaded file.
 - Image-only or scanned PDFs require OCR, which is not implemented.
-- Inline citation markers are checked against retrieved chunks, but PaperLens
+- Inline citation markers are checked against retrieved chunks, but PaperQuery
   does not perform independent factual verification or entailment checking.
 
 ## Secrets
