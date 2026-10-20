@@ -1,4 +1,4 @@
-"""Manual Gemini-backed end-to-end check for PaperLens."""
+"""Manual Gemini-backed end-to-end check for PaperQuery."""
 
 from dotenv import load_dotenv
 import os
