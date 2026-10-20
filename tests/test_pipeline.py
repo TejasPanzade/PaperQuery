@@ -4,7 +4,7 @@ from langchain_core.documents import Document
 from pipeline import (
     Citation,
     MAX_FILES,
-    PaperLens,
+    PaperQuery,
     _build_context,
     _parse_followups,
     _rrf_merge,
@@ -87,7 +87,7 @@ def test_truncate_normalizes_whitespace():
 
 
 def test_ingest_rejects_too_many_files_before_external_calls():
-    lens = PaperLens.__new__(PaperLens)
+    lens = PaperQuery.__new__(PaperLens)
     files = [(f"{index}.pdf", object()) for index in range(MAX_FILES + 1)]
 
     with pytest.raises(ValueError, match="Upload at most"):
