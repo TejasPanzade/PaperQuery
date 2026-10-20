@@ -1,5 +1,5 @@
 """
-PaperLens — RAG pipeline.
+PaperQuery — RAG pipeline.
 
 Builds a chat-with-PDF system using:
 - Hybrid retrieval (semantic + BM25)
@@ -301,7 +301,7 @@ class Generator:
 # ---------------------------------------------------------------------------
 
 
-class PaperLens:
+class PaperQuery:
     """End-to-end pipeline. Ingest PDFs once, then ask questions about them."""
 
     def __init__(self, api_key: str | None = None):
